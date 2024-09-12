@@ -22,9 +22,9 @@ function Navbar() {
           <span>SAMSKRITI</span>
         </a>
         <a href="/">Home</a>
-        <a href="/">Donate</a>
-        <a href="/">AI map</a>
-        <a href="/">ReSearch</a>
+        <a href="https://shashwath454.github.io/fundus/">Donate</a>
+        <a href="http://localhost:5173/">AI map</a>
+        <a href="/">AI chat</a>
       </div>
       <div className="right">
         {currentUser ? (
@@ -53,9 +53,9 @@ function Navbar() {
         </div>
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
-          <a href="/">Donate</a>
-          <a href="/">AI map</a>
-          <a href="/">ReSearch</a>
+          <a href="https://shashwath454.github.io/fundus/">Donate</a>
+          <a href="http://localhost:5173/">AI map</a>
+          <a href="/">AI chat</a>
           <a href="/login">Sign in</a>
           <a href="/register">Sign up</a>
         </div>

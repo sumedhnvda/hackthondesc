@@ -36,13 +36,13 @@ function SinglePage() {
               <div className="post">
                 <h1>{post.title}</h1>
                 <div className="address">
-                  <img src="/pin.png" alt="" />
+                  <img src="/pin.png" alt="phone" />
                   <span>{post.address}</span>
                 </div>
                 <div className="price">Rs {post.price}</div>
               </div>
               <div className="user">
-                <img src={post.user.avatar} alt="" />
+                <img src={post.user.avatar} alt={post.user.username} />
                 <span>{post.user.username}</span>
               </div>
             </div>
@@ -52,16 +52,15 @@ function SinglePage() {
                 __html: DOMPurify.sanitize(post.postDetail?.desc || ""),
               }}
             ></div>
+            {/* Ensure the map container is visible */}
+            <div className="mapContainer">
+              <Map items={[post]} />
+            </div>
           </div>
         </div>
       </div>
       <div className="features">
-        <div className="wrapper">
-          <p className="title">Location</p>
-          <div className="mapContainer">
-            <Map items={[post]} />
-          </div>
-        </div>
+        {/* Optional features section */}
       </div>
     </div>
   );

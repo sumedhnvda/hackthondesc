@@ -38,23 +38,20 @@ function Filter() {
             onChange={handleChange}
             defaultValue={query.city}
           />
-        </div>
+        </div><br />
 
         <div className="item">
-          <label htmlFor="property">ArtForm</label>
+          <label htmlFor="property">Type</label>
           <select
             name="property"
             id="property"
             onChange={handleChange}
             defaultValue={query.property}
           >
-            <option value="">any</option>
-            <option value="music_class">music_class</option>
-            <option value="dance_class">dance_class</option>
-            <option value="cooking_classes">cooking_classes</option>
-            <option value="historian">historian</option>
+             <option value="Events">Events</option>
+             <option value="Classes">Classes</option>
           </select>
-        </div>
+        </div><br />
 
         <div className="item">
           <label htmlFor="minPrice">Min Price</label>
@@ -67,7 +64,7 @@ function Filter() {
             defaultValue={query.minPrice}
           />
         </div>
-
+        <br />
         <div className="item">
           <label htmlFor="maxPrice">Max Price</label>
           <input

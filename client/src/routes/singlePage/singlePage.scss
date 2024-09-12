@@ -2,22 +2,29 @@
 
 .singlePage {
   display: flex;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh; // Full viewport height
+  background-color: #f5f7fa;
 
   @include md {
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
+    padding: 20px;
   }
 
   .details {
-    flex: 3;
-    height: 100%;
-    overflow-y: scroll;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; // Slightly larger card
+    margin-top: -10%; // For aesthetic alignment
 
     @include md {
-      flex: none;
-      height: max-content;
-      margin-bottom: 50px;
+      margin-top: 0;
     }
 
     .wrapper {
@@ -26,15 +33,19 @@
       @include lg {
         padding-right: 20px;
       }
+
       @include md {
-        padding-right: 0px;
+        padding-right: 0;
       }
 
       .info {
-        margin-top: 50px;
+        margin-top: 20px; // Match the card-like layout
+
         .top {
           display: flex;
           justify-content: space-between;
+          align-items: center; // Vertically center the items
+          gap: 20px;
 
           @include sm {
             flex-direction: column;
@@ -45,9 +56,13 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+
             h1 {
-              font-weight: 400;
+              font-size: 1.8rem; // Match profile header font size
+              font-weight: 600;
+              color: #333;
             }
+
             .address {
               display: flex;
               gap: 5px;
@@ -60,29 +75,27 @@
                 height: 16px;
               }
             }
+
             .price {
               padding: 5px;
               background-color: rgba(254, 205, 81, 0.438);
               border-radius: 5px;
-              width: max-content;
               font-size: 20px;
               font-weight: 300;
+              display: inline-block; // Ensures background color is limited to text size
             }
           }
+
           .user {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 20px;
-            padding: 0px 50px;
+            padding: 20px 50px;
             border-radius: 10px;
             background-color: rgba(254, 205, 81, 0.209);
             font-weight: 600;
-
-            @include sm {
-              padding: 20px 50px;
-            }
 
             img {
               width: 50px;
@@ -92,124 +105,33 @@
             }
           }
         }
+
         .bottom {
-          margin-top: 50px;
+          margin-top: 30px;
           color: #555;
-          line-height: 20px;
+          line-height: 1.6rem; // Match line height in profile-body
+        }
+
+        // Map section integrated inside the main card
+        .mapContainer {
+          margin-top: 30px;
+          width: 100%;
+          height: 200px; // Larger map size for better visibility
+          border-radius: 12px;
+          overflow: hidden;
+          background-color: #fff; // Ensure map container has a background color if needed
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            border: none; // Remove iframe border if using iframe for maps
+          }
         }
       }
     }
   }
+
   .features {
-    flex: 2;
-    height: 100%;
-    overflow-y: scroll;
-
-    @include md {
-      flex: none;
-      height: max-content;
-      margin-bottom: 50px;
-    }
-
-    .wrapper {
-      padding: 0px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      @include md {
-        padding: 20px;
-      }
-
-      img {
-        width: 50px;
-        height: 50px;
-      }
-
-      .title {
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-
-      .feature {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        img {
-          background-color: rgba(254, 205, 81, 0.209);
-        }
-
-        .featureText {
-          span {
-            font-weight: bold;
-          }
-          p {
-            font-size: 14px;
-          }
-        }
-      }
-
-      .listVertical {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 10px;
-        background-color: white;
-        border-radius: 10px;
-      }
-      .listHorizontal {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 10px;
-        background-color: white;
-        border-radius: 10px;
-      }
-
-      .sizes {
-        display: flex;
-        justify-content: space-between;
-
-        @include lg {
-          font-size: 12px;
-        }
-
-        .size {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          background-color: white;
-          padding: 10px;
-          border-radius: 5px;
-        }
-      }
-
-      .mapContainer {
-        width: 100%;
-        height: 200px;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-
-        button {
-          padding: 20px;
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          background-color: white;
-          border: 1px solid #fece51;
-          border-radius: 5px;
-          cursor: pointer;
-
-          img {
-            width: 16px;
-            height: 16px;
-          }
-        }
-      }
-    }
+    display: none; // If you want the features section removed
   }
 }

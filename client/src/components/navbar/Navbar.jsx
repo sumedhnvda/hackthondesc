@@ -23,7 +23,6 @@ function Navbar() {
         </a>
         <a href="/">Home</a>
         <a href="/">Donate</a>
-        <a href="/">Events</a>
         <a href="/">AI map</a>
         <a href="/">ReSearch</a>
       </div>
@@ -54,11 +53,11 @@ function Navbar() {
         </div>
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <a href="/">Donate</a>
+          <a href="/">AI map</a>
+          <a href="/">ReSearch</a>
+          <a href="/login">Sign in</a>
+          <a href="/register">Sign up</a>
         </div>
       </div>
     </nav>

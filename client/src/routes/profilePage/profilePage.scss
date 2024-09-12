@@ -1,90 +1,152 @@
 @import "../../responsive.scss";
 
-.profilePage {
-  display: flex;
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace
+}
+
+html, body {
   height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-  @include md{
-    flex-direction: column;
-    overflow: scroll;
-  }
+body {
+  background-color: #f9f9f9;
+}
 
-  .details {
-    flex: 3;
-    overflow-y: scroll;
-    padding-bottom: 50px;
+.profile-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Ensures the content takes up the full height of the viewport
+  padding: 20px;
+  background-color: #f5f7fa;
 
-    @include md{
-      flex:none;
-      height: max-content;
-    }
+  .profile-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: -10%;
 
-    .wrapper{
-      padding-right: 50px;
+    .profile-header {
       display: flex;
-      flex-direction: column;
-      gap: 50px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
 
-      .title{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        h1{
-          font-weight: 300;
-        }
-
-        button{
-          padding: 12px 24px;
-          background-color: #fece51;
-          cursor: pointer;
-          border: none;
-        }
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
       }
 
-      .info{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        span{
-          display: flex;
-          align-items: center;
-          gap: 20px;
-        }
-
-        button{
-          width: 100px;
-          background-color: teal;
+      .update-profile-btn{
+        .button {
+          background-color: #d6b990;
+          color: #fff;
           border: none;
-          color: white;
-          padding: 10px 20px;
+          padding: 10px 16px;
+          border-radius: 6px;
+          font-size: 1rem;
           cursor: pointer;
-          border-radius: 5px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #d6b990;
+          }
+        }
+      }
+     
+    }
+
+    .profile-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile-avatar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .label {
+          font-size: 1rem;
+          font-weight: 500;
+          color: #666;
+          margin-right: 10px;
         }
 
-        img{
-          width: 40px;
-          height: 40px;
+        .avatar {
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
+          border: 3px solid #ddd;
           object-fit: cover;
         }
       }
+
+      .profile-info {
+        width: 100%;
+        .info-item {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 0;
+          border-bottom: 1px solid #f0f0f0;
+
+          .label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #444;
+          }
+
+          b {
+            font-size: 1.2rem;
+            color: #333;
+          }
+        }
+      }
+
+      .logout-btn {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 20px;
+        margin-left: 80%;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #c82333;
+        }
+      }
     }
   }
-  .chatContainer {
-    flex: 2;
-    background-color: #fcf5f3;
-    height: 100%;
+}
+.create-new-post{
+  .button {
+    background-color: #d6b990;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-    @include md{
-      flex:none;
-      height: max-content;
-    }
-
-    .wrapper{
-      padding: 0px 20px;
-      height: 100%;
+    &:hover {
+      background-color: #d6b990;
     }
   }
 }

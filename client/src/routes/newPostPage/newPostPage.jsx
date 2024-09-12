@@ -56,11 +56,11 @@ function NewPostPage() {
               <input id="price" name="price" type="number" required />
             </div>
             <div className="item">
-              <label htmlFor="address">Address</label>
+              <label htmlFor="address">PhoneNO</label>
               <input id="address" name="address" type="text" required />
             </div>
             <div className="item description">
-              <label htmlFor="desc">Description and Contact information</label>
+              <label htmlFor="desc">Description</label>
               <ReactQuill theme="snow" onChange={setValue} value={value} />
             </div>
             <div className="item">
@@ -76,12 +76,10 @@ function NewPostPage() {
               <input id="longitude" name="longitude" type="text" required />
             </div>
             <div className="item">
-              <label htmlFor="property">Classes Type</label>
+              <label htmlFor="property">Type</label>
               <select name="property" required>
-                <option value="music_class">music_class</option>
-                <option value="dance_class">dance_class</option>
-                <option value="cooking_classes">cooking_classes</option>
-                <option value="historian">historian</option>
+                <option value="Events">Events</option>
+                <option value="Classes">Classes</option>
               </select>
             </div>
             <button className="sendButton" type="submit">Add</button>

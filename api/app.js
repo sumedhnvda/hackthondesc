@@ -10,24 +10,15 @@ import messageRoute from './routes/message.route.js';
 
 const app = express();
 
-// Dynamic CORS configuration
 app.use(cors((req, callback) => {
-  const origin = req.header('Origin');
-  const allowedOriginPattern = /^http:\/\/localhost:5173/;
-  
   const corsOptions = {
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
-    credentials: true, // Allow credentials (cookies)
+    origin: true, 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    credentials: true,
   };
 
-  if (origin && allowedOriginPattern.test(origin)) {
-    corsOptions.origin = true; // Allow requests from matching origin
-  } else {
-    corsOptions.origin = false; // Disallow requests from other origins
-  }
+  callback(null, corsOptions);
 
-  callback(null, corsOptions); // Pass the options to the cors middleware
-}));
 
 app.use(express.json());
 app.use(cookieParser());

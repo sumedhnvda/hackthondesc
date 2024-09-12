@@ -9,10 +9,10 @@ function HomePage() {
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-            <h1 className="title">Find your Cultural Guru & Master the Skills</h1>
-        <p>The Samskruti app provides a unique platform for users to connect with skilled experts in various cultural domains. 
-            Whether you're looking to learn a traditional dance form, master a craft, or immerse yourself in the culinary arts of a region, 
-            Samskruti makes it easy to find the right mentors.
+        <h1>Discover Your Cultural Guru & Experience Heritage Events!</h1>
+        <p>The Samskruti app offers a unique platform for users to connect with skilled experts in various cultural domains. 
+    Whether you're looking to learn a traditional dance form, master a craft, immerse yourself in the culinary arts of a region, 
+    or explore local cultural events and join them.
             </p>
             <SearchBar></SearchBar>
         </div>

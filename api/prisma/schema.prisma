@@ -18,6 +18,8 @@ model Post {
   price      Int
   images     String[]
   address    String
+  property   Property
+  googleform String
   city       String
   latitude   String
   longitude  String

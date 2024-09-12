@@ -29,6 +29,7 @@ function NewPostPage() {
           latitude: inputs.latitude,
           longitude: inputs.longitude,
           images: images,
+          googleform: inputs.googleform,  // Include google form input
         },
         postDetail: {
           desc: value,
@@ -56,8 +57,18 @@ function NewPostPage() {
               <input id="price" name="price" type="number" required />
             </div>
             <div className="item">
-              <label htmlFor="address">PhoneNO</label>
+              <label htmlFor="address">Phone Number</label>
               <input id="address" name="address" type="text" required />
+            </div>
+            <div className="item">
+              <label htmlFor="googleform">Google Form Link</label>
+              <input
+                id="googleform"
+                name="googleform"
+                type="url"
+                placeholder="https://forms.gle/..."
+                required
+              />
             </div>
             <div className="item description">
               <label htmlFor="desc">Description</label>
@@ -94,8 +105,8 @@ function NewPostPage() {
         <UploadWidget
           uwConfig={{
             multiple: true,
-            cloudName: "lamadev",
-            uploadPreset: "estate",
+            cloudName: "dwx9xjt1w",
+            uploadPreset: "samskruti",
             folder: "posts",
           }}
           setState={setImages}

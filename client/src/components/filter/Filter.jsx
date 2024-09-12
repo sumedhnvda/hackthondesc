@@ -7,8 +7,6 @@ function Filter() {
   const [query, setQuery] = useState({
     city: searchParams.get("city") || "",
     property: searchParams.get("property") || "",
-    minPrice: searchParams.get("minPrice") || "",
-    maxPrice: searchParams.get("maxPrice") || "",
   });
 
   const handleChange = (e) => {
@@ -25,7 +23,7 @@ function Filter() {
   return (
     <div className="filter">
       <h1>
-        Search results for <b>{searchParams.get("city")}</b>
+        Search results for <b>{searchParams.get("city") || "any location"}</b>
       </h1>
       <div className="top">
         <div className="item">
@@ -36,9 +34,9 @@ function Filter() {
             name="city"
             placeholder="City Location"
             onChange={handleChange}
-            defaultValue={query.city}
+            value={query.city}
           />
-        </div><br />
+        </div>
 
         <div className="item">
           <label htmlFor="property">Type</label>
@@ -46,41 +44,18 @@ function Filter() {
             name="property"
             id="property"
             onChange={handleChange}
-            defaultValue={query.property}
+            value={query.property}
           >
-             <option value="Events">Events</option>
-             <option value="Classes">Classes</option>
+            <option value="">Any</option>
+            <option value="Events">Events</option>
+            <option value="Classes">Classes</option>
           </select>
-        </div><br />
+        </div>
 
-        <div className="item">
-          <label htmlFor="minPrice">Min Price</label>
-          <input
-            type="number"
-            id="minPrice"
-            name="minPrice"
-            placeholder="any"
-            onChange={handleChange}
-            defaultValue={query.minPrice}
-          />
-        </div>
-        <br />
-        <div className="item">
-          <label htmlFor="maxPrice">Max Price</label>
-          <input
-            type="number"
-            id="maxPrice"
-            name="maxPrice"
-            placeholder="any"
-            onChange={handleChange}
-            defaultValue={query.maxPrice}
-          />
-        </div>
+        <button className="searchbutton" onClick={handleFilter}>
+          <img src="/search.png" alt="Search" width="24px" height="24px" />
+        </button>
       </div>
-
-      <button className="searchbutton" onClick={handleFilter}>
-        <img src="/search.png" alt="Search"  width="30px" height="30px" />
-      </button>
     </div>
   );
 }

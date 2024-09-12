@@ -12,13 +12,13 @@ const app = express();
 
 app.use(cors((req, callback) => {
   const corsOptions = {
-    origin: true, 
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-    credentials: true,
+    origin: true, // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
+    credentials: true, // Allow credentials (cookies)
   };
 
-  callback(null, corsOptions);
-
+  callback(null, corsOptions); // Pass the options to the cors middleware
+})); // <-- Missing closing bracket
 
 app.use(express.json());
 app.use(cookieParser());

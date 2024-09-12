@@ -5,20 +5,21 @@
   gap: 20px;
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  margin-top: 20px;
+
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
   }
 
   .imageContainer {
     flex: 2;
     height: 200px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
 
     @include md {
@@ -30,7 +31,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
-      
+
       &:hover {
         transform: scale(1.05);
       }
@@ -45,7 +46,7 @@
     gap: 15px;
 
     .title {
-      font-size: 22px;
+      font-size: 1.8rem;
       font-weight: 600;
       color: #333;
       transition: color 0.3s ease, transform 0.3s ease;
@@ -57,12 +58,15 @@
     }
 
     .address {
-      font-size: 14px;
       display: flex;
+      gap: 5px;
       align-items: center;
-      gap: 8px;
-      color: #666;
-
+      color: #161414;
+      font-size: 20px;
+      padding: 5px;
+      background-color: rgba(254, 205, 81, 0.438);
+      border-radius: 5px; // Added border-radius for consistency
+      margin-top: -40px;
       img {
         width: 16px;
         height: 16px;
@@ -70,63 +74,37 @@
     }
 
     .price {
-      font-size: 22px;
-      font-weight: 400;
-      padding: 8px 12px;
-      border-radius: 6px;
-      background-color: rgba(254, 205, 81, 0.6);
-      color: #444;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: inline-block; // Ensure background color is limited to text size
+      padding: 5px;
+      background-color: rgba(254, 205, 81, 0.438);
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 300;
+      display: inline-block;
+      color: #161414; // Ensure the text color matches
+      margin-top: -40px; // Adjust spacing as needed
     }
 
-    .bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
+    .registerButton {
+      display: block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: -40px; // Adjust spacing
 
-      .features {
-        display: flex;
-        gap: 15px;
-        font-size: 14px;
-        color: #666;
-
-        .feature {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          background-color: #f9fafb;
-          padding: 6px 12px;
-          border-radius: 6px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
+      &:hover {
+        background-color: #0056b3;
       }
 
-      .icons {
-        display: flex;
-        gap: 15px;
-
-        .icon {
-          border: 1px solid #ccc;
-          padding: 6px;
-          border-radius: 50%;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background-color 0.3s ease, border-color 0.3s ease;
-
-          &:hover {
-            background-color: #f3f4f6;
-            border-color: hsl(224, 79%, 74%);
-          }
-
-          svg {
-            color: hsl(224, 79%, 74%);
-            font-size: 16px;
-          }
-        }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
       }
     }
   }

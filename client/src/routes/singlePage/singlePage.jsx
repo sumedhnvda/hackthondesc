@@ -26,6 +26,13 @@ function SinglePage() {
     }
   };
 
+  // Function to handle redirect to Google Form
+  const handleRegister = () => {
+    if (post.googleform) {
+      window.open(post.googleform, "_blank"); // Opens in a new tab
+    }
+  };
+
   return (
     <div className="singlePage">
       <div className="details">
@@ -36,9 +43,15 @@ function SinglePage() {
               <div className="post">
                 <h1>{post.title}</h1>
                 <div className="address">
-                  <img src="/pin.png" alt="phone" />
+                  <img src="/pin.png" alt="pin" />
                   <span>{post.address}</span>
                 </div>
+                {/* Move Register button here */}
+                {post.googleform && (
+                  <button className="registerButton" onClick={handleRegister}>
+                    Register / Know More
+                  </button>
+                )}
                 <div className="price">Rs {post.price}</div>
               </div>
               <div className="user">
@@ -52,7 +65,6 @@ function SinglePage() {
                 __html: DOMPurify.sanitize(post.postDetail?.desc || ""),
               }}
             ></div>
-            {/* Ensure the map container is visible */}
             <div className="mapContainer">
               <Map items={[post]} />
             </div>

@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import "./card.scss";
 
 function Card({ item }) {
+  // Function to handle redirect to Google Form
+  const handleRegister = () => {
+    if (item.googleform) {
+      window.open(item.googleform, "_blank"); // Opens in a new tab
+    }
+  };
+
   return (
     <div className="card">
       <Link to={`/${item.id}`} className="imageContainer">
@@ -16,6 +23,12 @@ function Card({ item }) {
           <span>{item.address}</span>
         </p>
         <p className="price">Rs {item.price}</p>
+        {/* Add Register button */}
+        {item.googleform && (
+          <button className="registerButton" onClick={handleRegister}>
+            Register / Know More
+          </button>
+        )}
       </div>
     </div>
   );

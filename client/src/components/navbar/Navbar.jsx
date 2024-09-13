@@ -1,18 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useNotificationStore } from "../../lib/notificationStore";
+import { useContext } from "react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-
   const { currentUser } = useContext(AuthContext);
-
-  const fetch = useNotificationStore((state) => state.fetch);
-  const number = useNotificationStore((state) => state.number);
-
-  if(currentUser) fetch();
 
   return (
     <nav>
@@ -23,7 +17,7 @@ function Navbar() {
         </a>
         <a href="/">Home</a>
         <a href="https://shashwath454.github.io/fundus/">Donate</a>
-        <a href="http://localhost:5173/">AI map</a>
+        <a href="https://mapfinal-d3ost7mdb-sumedhnvdas-projects.vercel.app/">AI map</a>
         <a href="/">AI chat</a>
       </div>
       <div className="right">
@@ -32,7 +26,6 @@ function Navbar() {
             <img src={currentUser.avatar || "/noavatar.jpg"} alt="" />
             <span>{currentUser.username}</span>
             <Link to="/profile" className="profile">
-              {number > 0 && <div className="notification">{number}</div>}
               <span>Profile</span>
             </Link>
           </div>
@@ -54,7 +47,7 @@ function Navbar() {
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
           <a href="https://shashwath454.github.io/fundus/">Donate</a>
-          <a href="http://localhost:5173/">AI map</a>
+          <a href="https://mapfinal-d3ost7mdb-sumedhnvdas-projects.vercel.app/">AI map</a>
           <a href="/">AI chat</a>
           <a href="/login">Sign in</a>
           <a href="/register">Sign up</a>

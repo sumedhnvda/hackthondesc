@@ -31,9 +31,70 @@
         padding: 0 10px;
       }
 
+      .searchBar {
+        display: flex;
+        align-items: center;
+        margin-top: -40%;
+        margin-bottom: 20px; // Ensures the search bar stays above the h1 and p
+        width: 50%;
+        max-width: 800px;
+        margin-left: 0%;
+        
+        background-color: #f1f1f1;
+        border-radius: 8px;
+        
+
+        input {
+          flex: 1;
+          padding: 10px;
+          font-size: 18px;
+          border: none;
+          border-radius: 8px;
+          outline: none;
+
+          @include lg {
+            font-size: 16px;
+          }
+
+          @include md {
+            font-size: 14px;
+          }
+
+          @include sm {
+            font-size: 12px;
+          }
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: #007bff; // Primary color for button
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #0056b3; // Darker shade for hover
+          }
+
+          @include lg {
+            font-size: 16px;
+          }
+
+          @include md {
+            font-size: 14px;
+          }
+
+          @include sm {
+            font-size: 12px;
+          }
+        }
+      }
+
       h1 {
-        font-size: 56px; 
-        margin-top: -250px; 
+        font-size: 56px;
 
         @include lg {
           font-size: 48px;
@@ -66,10 +127,6 @@
           font-size: 14px;
         }
       }
-
-      .searchBar {
-        margin-top: 20px;
-      }
     }
   }
 
@@ -89,7 +146,7 @@
       position: relative; // Adjusted for better control
       right: 0;
       max-height: 100%; // Ensure the image fits within the container height
-      margin-top: -250px; 
+      margin-top: -250px;
 
       @include lg {
         width: 90%;

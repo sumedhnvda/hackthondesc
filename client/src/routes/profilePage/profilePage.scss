@@ -1,12 +1,10 @@
 @import "../../responsive.scss";
 
-
 * {
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace
+  font-family: monospace;
 }
 
 html, body {
@@ -18,27 +16,32 @@ body {
   background-color: #f9f9f9;
 }
 
-.profile-details {
+.profilePage {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; // Ensures the content takes up the full height of the viewport
+  min-height: 100vh;
   padding: 20px;
   background-color: #f5f7fa;
+  overflow-y: auto; // Enable vertical scroll if needed
 
-  .profile-card {
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    margin-top: -10%;
+    overflow: hidden; // Hide overflow inside the profile card
 
     .profile-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
       margin-bottom: 20px;
 
       h1 {
@@ -47,7 +50,7 @@ body {
         color: #333;
       }
 
-      .update-profile-btn{
+      .update-profile-btn {
         .button {
           background-color: #d6b990;
           color: #fff;
@@ -63,24 +66,25 @@ body {
           }
         }
       }
-     
     }
 
     .profile-body {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
 
       .profile-avatar {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
 
         .label {
           font-size: 1rem;
           font-weight: 500;
           color: #666;
-          margin-right: 10px;
+          margin-bottom: 10px;
         }
 
         .avatar {
@@ -93,7 +97,10 @@ body {
       }
 
       .profile-info {
+        display: flex;
+        flex-direction: column;
         width: 100%;
+
         .info-item {
           margin-bottom: 10px;
           display: flex;
@@ -124,7 +131,6 @@ body {
         cursor: pointer;
         font-size: 1rem;
         margin-top: 20px;
-        margin-left: 80%;
         transition: background-color 0.3s ease;
 
         &:hover {
@@ -132,21 +138,192 @@ body {
         }
       }
     }
+
+    .title {
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+    }
+
+    .create-new-post {
+      .button {
+        background-color: #d6b990;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #d6b990;
+        }
+      }
+    }
   }
 }
-.create-new-post{
-  .button {
-    background-color: #d6b990;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: #d6b990;
+// Media Queries for Responsiveness
+
+@media (max-width: 1200px) {
+  .profilePage {
+    padding: 15px;
+  }
+
+  .profile-details {
+    padding: 15px;
+    max-width: 1000px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    .update-profile-btn {
+      .button {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+      }
+    }
+  }
+
+  .profile-body {
+    flex-direction: column;
+    align-items: center;
+    
+    .profile-avatar {
+      margin-bottom: 20px;
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .profile-info {
+    .info-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .logout-btn {
+    margin-top: 10px;
+  }
+
+  .title {
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-details {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .profile-header {
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    .update-profile-btn {
+      .button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+    }
+  }
+
+  .profile-body {
+    .profile-avatar {
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  .profile-info {
+    .info-item {
+      .label {
+        font-size: 0.9rem;
+      }
+
+      b {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .title {
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    .update-profile-btn {
+      .button {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+      }
+    }
+  }
+
+  .profile-body {
+    .profile-avatar {
+      .avatar {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+
+  .profile-info {
+    .info-item {
+      .label {
+        font-size: 0.8rem;
+      }
+
+      b {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .logout-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .title {
+    h1 {
+      font-size: 1rem;
     }
   }
 }

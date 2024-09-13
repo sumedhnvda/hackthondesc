@@ -16,6 +16,7 @@ function SinglePage() {
   const handleSave = async () => {
     if (!currentUser) {
       navigate("/login");
+      return;
     }
     setSaved((prev) => !prev);
     try {
@@ -46,7 +47,6 @@ function SinglePage() {
                   <img src="/pin.png" alt="pin" />
                   <span>{post.address}</span>
                 </div>
-                {/* Move Register button here */}
                 {post.googleform && (
                   <button className="registerButton" onClick={handleRegister}>
                     Register / Know More

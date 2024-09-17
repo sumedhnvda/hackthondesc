@@ -13,12 +13,10 @@ function Navbar() {
       <div className="left">
         <a href="/" className="logo">
           <img src="/logo.png" alt="" />
-          <span>SAMSKRITI</span>
+          <span>TOURZY.KARAVALI</span>
         </a>
         <a href="/">Home</a>
-        <a href="https://shashwath454.github.io/fundus/">Donate</a>
         <a href="https://mapfinal-d3ost7mdb-sumedhnvdas-projects.vercel.app/">AI map</a>
-        <a href="/">AI chat</a>
       </div>
       <div className="right">
         {currentUser ? (
@@ -46,9 +44,7 @@ function Navbar() {
         </div>
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
-          <a href="https://shashwath454.github.io/fundus/">Donate</a>
           <a href="https://mapfinal-d3ost7mdb-sumedhnvdas-projects.vercel.app/">AI map</a>
-          <a href="/">AI chat</a>
           <a href="/login">Sign in</a>
           <a href="/register">Sign up</a>
         </div>

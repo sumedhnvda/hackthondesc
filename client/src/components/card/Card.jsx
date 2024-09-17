@@ -23,12 +23,6 @@ function Card({ item }) {
           <span>{item.address}</span>
         </p>
         <p className="price">Rs {item.price}</p>
-        {/* Add Register button */}
-        {item.googleform && (
-          <button className="registerButton" onClick={handleRegister}>
-            Register / Know More
-          </button>
-        )}
       </div>
     </div>
   );

@@ -69,7 +69,7 @@ function ProfileUpdatePage() {
         <UploadWidget
           uwConfig={{
             cloudName: "dwx9xjt1w",
-            uploadPreset: "samskruti",
+            uploadPreset: "Comedkars",
             multiple: false,
             maxImageFileSize: 2000000,
             folder: "avatars",

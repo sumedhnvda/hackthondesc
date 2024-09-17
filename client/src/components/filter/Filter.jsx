@@ -6,7 +6,6 @@ function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState({
     city: searchParams.get("city") || "",
-    property: searchParams.get("property") || "",
   });
 
   const handleChange = (e) => {
@@ -36,20 +35,6 @@ function Filter() {
             onChange={handleChange}
             value={query.city}
           />
-        </div>
-
-        <div className="item">
-          <label htmlFor="property">Type</label>
-          <select
-            name="property"
-            id="property"
-            onChange={handleChange}
-            value={query.property}
-          >
-            <option value="">Any</option>
-            <option value="Events">Events</option>
-            <option value="Classes">Classes</option>
-          </select>
         </div>
 
         <button className="searchbutton" onClick={handleFilter}>

@@ -86,13 +86,6 @@ function NewPostPage() {
               <label htmlFor="longitude">Longitude</label>
               <input id="longitude" name="longitude" type="text" required />
             </div>
-            <div className="item">
-              <label htmlFor="property">Type</label>
-              <select name="property" required>
-                <option value="Events">Events</option>
-                <option value="Classes">Classes</option>
-              </select>
-            </div>
             <button className="sendButton" type="submit">Add</button>
             {error && <span>{error}</span>}
           </form>
@@ -106,7 +99,7 @@ function NewPostPage() {
           uwConfig={{
             multiple: true,
             cloudName: "dwx9xjt1w",
-            uploadPreset: "samskruti",
+            uploadPreset: "Comedkars",
             folder: "posts",
           }}
           setState={setImages}

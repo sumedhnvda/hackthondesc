@@ -72,7 +72,6 @@ function SinglePage() {
         </div>
       </div>
       <div className="features">
-        {/* Optional features section */}
       </div>
     </div>
   );

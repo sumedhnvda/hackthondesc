@@ -18,7 +18,6 @@ model Post {
   price      Int
   images     String[]
   address    String
-  property   Property
   googleform String
   city       String
   latitude   String
@@ -30,10 +29,6 @@ model Post {
   savedPosts SavedPost[]
 }
 
-enum Property {
-  Events
-  Classes
-}
 
 model PostDetail {
   id     String @id @default(auto()) @map("_id") @db.ObjectId

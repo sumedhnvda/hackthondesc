@@ -1,15 +1,15 @@
 @import "../../responsive.scss";
 
 nav {
-  margin-top: 2%;
-  height: 100px;
+  margin-top: 1%;
+  height: 80px; // Reduced height
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   a {
     transition: all 0.4s ease;
-    font-size: xx-large;
+    font-size: large; // Reduced font size
 
     @include sm {
       display: none;
@@ -24,18 +24,17 @@ nav {
     flex: 3;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px; // Reduced gap between items
 
     .logo {
       font-weight: bold;
-     
-      font-size: xx-large;
+      font-size: large; // Reduced font size
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px; // Reduced gap between logo items
 
       img {
-        width: 50px;
+        width: 40px; // Reduced image size
       }
 
       span {
@@ -49,64 +48,64 @@ nav {
       }
     }
   }
+
   .right {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    font-size: xx-large;
+    font-size: large; // Reduced font size
 
     @include md {
       background-color: transparent;
     }
 
     a {
-      padding: 12px 24px;
-      margin: 20px;
+      padding: 8px 16px; // Reduced padding
+      margin: 10px; // Reduced margin
     }
 
-    .user{
+    .user {
       display: flex;
       align-items: center;
       font-weight: bold;
 
-      img{
-        width: 40px;
-        height: 40px;
+      img {
+        width: 30px; // Reduced profile image size
+        height: 30px;
         border-radius: 50%;
         object-fit: cover;
-        margin-right: 20px;
+        margin-right: 10px; // Reduced margin
       }
 
-      span{
-        @include sm{
+      span {
+        @include sm {
           display: none;
         }
       }
 
-      .profile{
-        padding: 12px 24px;
+      .profile {
+        padding: 10px 20px; // Reduced padding
         background-color: #fece51;
-        border-radius: 10px;
+        border-radius: 8px; // Adjusted border radius
         cursor: pointer;
         border: none;
         position: relative;
-        
-        .notification{
+
+        .notification {
           position: absolute;
-          top: -8px;
-          right: -8px;
+          top: -6px; // Adjusted position
+          right: -6px;
           background-color: red;
           color: white;
           border-radius: 50%;
-          width: 26px;
-          height: 26px;
+          width: 20px; // Reduced notification size
+          height: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
         }
-
       }
     }
 
@@ -119,8 +118,8 @@ nav {
       z-index: 999;
 
       img {
-        width: 36px;
-        height: 36px;
+        width: 30px; // Reduced menu icon size
+        height: 30px;
         cursor: pointer;
       }
 
@@ -142,7 +141,7 @@ nav {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px; // Reduced menu font size
 
       &.active {
         right: 0;

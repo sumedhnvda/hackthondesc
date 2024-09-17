@@ -11,11 +11,10 @@ function HomePage() {
       <div className="textContainer">
         <div className="wrapper">
         <SearchBar></SearchBar>
-        <h1>Discover Your Cultural Guru & Experience Heritage Events!</h1>
-        <p>The Samskruti app offers a unique platform for users to connect with skilled experts in various cultural domains. 
-    Whether you're looking to learn a traditional dance form, master a craft, immerse yourself in the culinary arts of a region, 
-    or explore local cultural events and join them.
-            </p>
+        <h1>Uncover Hidden Gems with Local Experts in Karavali!</h1>
+<p>Tourzy connects you with local guides who reveal the best-kept secrets of Karavali. Whether you're eager to explore serene beaches, 
+discover historical landmarks, or experience authentic cultural traditions, our platform helps you avoid overcrowded spots and dive deep into the true essence of the region.</p>
+
             
         </div>
         </div>
